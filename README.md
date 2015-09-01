@@ -17,7 +17,7 @@ Put the `safemail.php` in `/site/plugins`.
 ### 1. Kirbytext.
 
 ```markdown
-(safemail: hello@examaple.com text: Contact us)
+(safemail: hello@examaple.com)
 ```
 
 It is compatible with email kirbytext as well.
@@ -42,9 +42,9 @@ Output:
 
 ### 4. Full featured examples
 ```markdown
-(safemail: hello@examaple.com text: Contact us title: Title for contact us, class: email)
+(safemail: hello@examaple.com text: Contact us title: Title for contact us class: email)
 
-(email: hello@examaple.com text: Contact us title: Title for contact us, class: email)
+(email: hello@examaple.com text: Contact us title: Title for contact us class: email)
 ```
 
 ```php
@@ -67,4 +67,5 @@ David Vigvari
 
 ## Credits
 [Matt Berther](https://matt.berther.io/2009/01/15/hiding-an-email-address-from-spam-harvesters/)
+
 [David Walsh](http://davidwalsh.name/php-email-encode-prevent-spam)
