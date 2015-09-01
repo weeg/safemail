@@ -14,14 +14,14 @@ Put the `safemail.php` in `/site/plugins`.
 (safemail: hello@examaple.com text: Contact us)
 ```
 
-Output:
-```html
-<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#101;&#108;&#108;&#111;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;" style="unicode-bidi:bidi-override;direction:rtl">moc.elpmaxe@olleh</a>
-```
-
 It is compatible with email kirbytext as well.
 ```php
 (email: hello@eaxmaple.com text: Contact us)
+```
+
+Output:
+```html
+<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#101;&#108;&#108;&#111;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;" style="unicode-bidi:bidi-override;direction:rtl">moc.elpmaxe@olleh</a>
 ```
 
 ### Using it on fileds
@@ -34,12 +34,22 @@ It is compatible with email kirbytext as well.
 <?php echo safemail('hello@example.com', 'Contact us'); ?>
 ```
 
+### Full featured examples
+```php
+(safemail: hello@examaple.com text: Contact us title: Contact us title, class:email)
+
+(email: hello@examaple.com text: Contact us title: Contact us title, class:email)
+
+<?php echo $page->my_email()->safemail('Contact us', 'Contact us title', 'email') ?>
+
+<?php echo safemail('Contact us', 'Contact us title', 'email') ?>
+```
 
 ## Parameters
-email 
-text (optional, default: email): Displayed text
-title (optional): Link title
-class (optional): Extra classes
+* email 
+* text (optional, default: email): Displayed text
+* title (optional): Link title
+* class (optional): Extra classes
 
 ## Author
 
