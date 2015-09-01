@@ -2,6 +2,12 @@
 
 This is a plugin for [Kirby](http://getkirby.com/) that prevents email address to be scanned by bots.
 
+## How it works?
+
+Safemail converts the email address to ASCII characters with, the mailto: part as well. And reverses the order of the text part of the email. This way spam bots are not able to recognize the email address (hopefully :)), however leaving it still functional.
+
+The only sideback of this solution is, if you are trying to copy the email address it will be in backward. i.e: moc.elpmaxe@olleh
+
 ## Installation
 
 Put the `safemail.php` in `/site/plugins`.
@@ -58,3 +64,7 @@ Output:
 ## Author
 
 David Vigvari
+
+## Credits
+[Matt Berther](https://matt.berther.io/2009/01/15/hiding-an-email-address-from-spam-harvesters/)
+[David Walsh](http://davidwalsh.name/php-email-encode-prevent-spam)
