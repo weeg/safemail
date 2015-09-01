@@ -8,14 +8,14 @@ Put the `safemail.php` in `/site/plugins`.
 
 ## Example usage
 
-### Using it in kirbytext.
+### 1. Kirbytext.
 
-```php
+```markdown
 (safemail: hello@examaple.com text: Contact us)
 ```
 
 It is compatible with email kirbytext as well.
-```php
+```markdown
 (email: hello@eaxmaple.com text: Contact us)
 ```
 
@@ -24,24 +24,28 @@ Output:
 <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#101;&#108;&#108;&#111;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;" style="unicode-bidi:bidi-override;direction:rtl">moc.elpmaxe@olleh</a>
 ```
 
-### Using it on fileds
+### 2. Fields
 ```php
 <?php echo $page->my_email()->safemail('Contact us') ?>
 ```
 
-### Using it anywhere else
+### 3. Anywhere else
 ```php
 <?php echo safemail('hello@example.com', 'Contact us'); ?>
 ```
 
 ### Full featured examples
-```php
+```markdown
 (safemail: hello@examaple.com text: Contact us title: Contact us title, class:email)
 
 (email: hello@examaple.com text: Contact us title: Contact us title, class:email)
+```
 
+```php
 <?php echo $page->my_email()->safemail('Contact us', 'Contact us title', 'email') ?>
+```
 
+```php
 <?php echo safemail('Contact us', 'Contact us title', 'email') ?>
 ```
 
