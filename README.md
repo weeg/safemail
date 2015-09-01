@@ -16,7 +16,7 @@ Put the `safemail.php` in `/site/plugins`.
 
 It is compatible with email kirbytext as well.
 ```markdown
-(email: hello@eaxmaple.com text: Contact us)
+(email: hello@eaxmaple.com)
 ```
 
 Output:
@@ -26,27 +26,27 @@ Output:
 
 ### 2. Fields
 ```php
-<?php echo $page->my_email()->safemail('Contact us') ?>
+<?php echo $page->my_email()->safemail() ?>
 ```
 
 ### 3. Anywhere else
 ```php
-<?php echo safemail('hello@example.com', 'Contact us'); ?>
+<?php echo safemail('hello@example.com'); ?>
 ```
 
-### Full featured examples
+### 4. Full featured examples
 ```markdown
-(safemail: hello@examaple.com text: Contact us title: Contact us title, class:email)
+(safemail: hello@examaple.com text: Contact us title: Title for contact us, class: email)
 
-(email: hello@examaple.com text: Contact us title: Contact us title, class:email)
+(email: hello@examaple.com text: Contact us title: Title for contact us, class: email)
 ```
 
 ```php
-<?php echo $page->my_email()->safemail('Contact us', 'Contact us title', 'email') ?>
+<?php echo $page->my_email()->safemail('Contact us', ' Title for contact us', 'email') ?>
 ```
 
 ```php
-<?php echo safemail('Contact us', 'Contact us title', 'email') ?>
+<?php echo safemail('Contact us', ' Title for contact us', 'email') ?>
 ```
 
 ## Parameters
