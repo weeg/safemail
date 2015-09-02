@@ -4,9 +4,8 @@ This is a plugin for [Kirby](http://getkirby.com/) that prevents email address t
 
 ## How it works?
 
-Safemail converts the email address to ASCII characters with, the mailto: part as well. And reverses the order of the text part of the email. This way spam bots are not able to recognize the email address (hopefully :)), however leaving it still functional.
-
-The only sideback of this solution is, if you are trying to copy the email address it will be in backward. i.e: moc.elpmaxe@olleh
+Safemail replaces the @ and . characters in the href part with random generated texts. And changes it back on click.
+It also insterts extra characters on the text part, and replaces the @ and . characters with the correct ASCII codes to make it harder to recognize.
 
 ## Installation
 
@@ -27,8 +26,12 @@ It is compatible with email kirbytext as well.
 
 Output:
 ```html
-<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#101;&#108;&#108;&#111;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;" style="unicode-bidi:bidi-override;direction:rtl">moc.elpmaxe@olleh</a>
+<a href="mailto:helloI0GDKexampleYVVWYcom" onclick="this.href=this.href.replace(/I0GDK/,'@').replace(/YVVWY/,'.')">
+hello<span style="display:none">I0GDK</span>&#64;example<span style="display:none">YVVWY</span>&#46;com
+</a>
 ```
+
+**Please make sure that you are not using html() function on kirbytext(), otherwise the ASCII characters won't be displayed!**
 
 ### 2. Fields
 ```php
@@ -66,6 +69,5 @@ Output:
 David Vigvari
 
 ## Credits
-[Matt Berther](https://matt.berther.io/2009/01/15/hiding-an-email-address-from-spam-harvesters/)
+[Amit Agarval](http://www.labnol.org/internet/hide-email-address-web-pages/28364/)
 
-[David Walsh](http://davidwalsh.name/php-email-encode-prevent-spam)
